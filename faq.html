@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Question - Visionare</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <style>
+        /* Form styles */
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .form-border {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-border input,
+        .form-border textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .form-border textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-border button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color:brown;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .form-border button:hover {
+            background-color:brown;
+        }
+        
+        .success-message {
+            text-align: center;
+            color: #3c763d;
+            background-color: #dff0d8;
+            border: 1px solid #d6e9c6;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <!-- Logo on the left side and text next to it -->
+            <div class="logo">
+                <img src="../images/MAINLOGO.JPG" alt="Visionare Logo" class="logo-img">
+                <span class="logo-text">VISIONARE</span>
+            </div>
+
+            <div class="user-actions">
+                <a href="../pages/store.html">Store Locator</a>
+                <a href="../pages/login.html">Sign In / Register</a>
+                <a href="../pages/cart.html" class="cart-icon">Cart <span class="cart-count">0</span></a>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/eyeglasses-all.html">Eyeglasses</a></li>
+                <li><a href="../pages/sunglasses.html">Sunglasses</a></li>
+                <li><a href="../pages/computer-glasses.html">Computer Glasses</a></li>
+                <li><a href="../pages/contact-lenses.html">Contact Lenses</a></li>
+                <li><a href="../pages/try-on.html">3D Try On</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <h2>Submit Your Question</h2>
+        <div id="success-message" class="success-message">
+            Thank you for your question! We'll get back to you as soon as possible.
+        </div>
+        <form name="Question" class="form-border" method="post" action="https://formspree.io/f/mjkwoqra">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Question..." rows="5" required></textarea>
+            <button type="submit">Send Question</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="../pages/eyeglasses-all.html">Eyeglasses</a></li>
+                    <li><a href="../pages/sunglasses.html">Sunglasses</a></li>
+                    <li><a href="../pages/computer-glasses.html">Computer Glasses</a></li>
+                    <li><a href="../pages/contact-lenses.html">Contact Lenses</a></li>
+                    <li><a href="../pages/accessories.html">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Help & FAQs</h3>
+                <ul>
+                    <li><a href="../pages/track-order.html">Track Order</a></li>
+                    <li><a href="../pages/returns.html">Returns & Exchanges</a></li>
+                    <li><a href="../pages/warranty.html">Warranty</a></li>
+                    <li><a href="../pages/shipping.html">Shipping Information</a></li>
+                    <li><a href="../pages/prescription-help.html">Prescription Help</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="../pages/our-story.html">Our Story</a></li>
+                    <li><a href="../pages/careers.html">Careers</a></li>
+                    <li><a href="../pages/press.html">Press</a></li>
+                    <li><a href="../pages/blog.html">Blog</a></li>
+                    <li><a href="../pages/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="mailto:support@visionare.com">Email: support@visionare.com</a></li>
+                    <li><a href="tel:9356350418">Phone: 9356350418</a></li>
+                    <li>Hours: 9am-6pm, Mon-Fri</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © 2025 Visionare. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Check for form submission success
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('submitted') === 'true') {
+            document.getElementById('success-message').style.display = 'block';
+            // Scroll to the success message
+            document.getElementById('success-message').scrollIntoView();
+        }
+    </script>
+</body>
+</html>

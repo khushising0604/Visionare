@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyeglasses | Visionare</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <style>
+        /* Page specific styles */
+        .page-banner {
+            height: 30vh;
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/eyeglasses-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            color: #8b7355;
+            margin-bottom: 15px;
+        }
+        
+        .page-description {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #666;
+        }
+        
+        .filters {
+            background-color: white;
+            padding: 20px 5%;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-label {
+            font-weight: 500;
+            color: #333;
+            min-width: 70px;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-options button {
+            background-color: #f9f6f2;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-options button:hover,
+        .filter-options button.active {
+            background-color: #8b7355;
+            color: white;
+            border-color: #8b7355;
+        }
+        
+        .product-list {
+            padding: 20px 5% 60px;
+        }
+        
+        .product-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .product-count {
+            color: #666;
+        }
+        
+        .sort-options select {
+            padding: 8px 12px;
+            border: 1px solid white;
+            border-radius: 4px;
+            background-color: white;
+            color: #333;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 10px;
+        }
+        
+        .pagination button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .pagination button:hover,
+        .pagination button.active {
+            background-color: #8b7355;
+            color: white;
+            border-color: #8b7355;
+        }
+        
+        @media (max-width: 768px) {
+            .page-banner {
+                height: 25vh;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .filter-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .products-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">Visionare</div>
+            <div class="user-actions">
+                <a href="#">Store Locator</a>
+                <a href="login.html">Sign In / Register</a>
+                <a href="cart.html" class="cart-icon">Cart <span class="cart-count">0</span></a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="eyeglasses.html">Eyeglasses</a></li>
+                <li><a href="sunglasses.html">Sunglasses</a></li>
+                <li><a href="computer-glasses.html">Computer Glasses</a></li>
+                <li><a href="contact-lenses.html">Contact Lenses</a></li>
+                <li><a href="../index.html#try-on-section">3D Try On</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+        <!-- Banner Image -->
+    <div class="eyeglasses-banner">
+    <img src="/images/banners/2.jpg" alt="Eyeglasses Banner">
+    </div> 
+
+    <div class="page-banner">
+        <div>
+            <h1 class="page-title">Eyeglasses</h1>
+            <p class="page-description">Find the perfect frames to complement your style and vision needs. From classic designs to modern trends, we have glasses for every face and preference.</p>
+        </div>
+    </div>
+    
+    <section class="filters">
+        <div class="filter-container">
+            <div class="filter-group">
+                <span class="filter-label">Shape:</span>
+                <div class="filter-options">
+                    <button>Round</button>
+                    <button>Square</button>
+                    <button>Oval</button>
+                    <button>Rectangle</button>
+                    <button>Cat Eye</button>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Material:</span>
+                <div class="filter-options">
+                    <button>Metal</button>
+                    <button>Plastic</button>
+                    <button>Titanium</button>
+                    <button>Acetate</button>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Price:</span>
+                <div class="filter-options">
+                    <button>Under ₹2000</button>
+                    <button>₹1400-₹1500</button>
+                    <button>₹1500-₹2000</button>
+                    <button>₹2000</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="product-list">
+        <div class="products-header">
+            <div class="product-count">Showing 16 of 22 products</div>
+            <div class="sort-options">
+                <select name="sort" id="sort">
+                    <option value="popular">Most Popular</option>
+                    <option value="newest">Newest Arrivals</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+        
+        <di<div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card" data-product-id="101">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses1.jpeg" alt="Urban Classic Eyeglasses" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Urban Classic</h3>
+                    <p class="product-price">₹4399</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Product 2 -->
+            <div class="product-card" data-product-id="102">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses2.jpeg" alt="Retro Round Eyeglasses" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Retro Round</h3>
+                    <p class="product-price">₹2999</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Product 3 -->
+            <div class="product-card" data-product-id="103">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses3.jpeg" alt="Classic Aviator" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Classic Aviator</h3>
+                    <p class="product-price">₹2299</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Product 4 -->
+            <div class="product-card" data-product-id="104">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses4.jpeg" alt="Urban Frame" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Urban Frame</h3>
+                    <p class="product-price">₹3999</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            
+            <!-- Product 5 -->
+            <div class="product-card" data-product-id="104">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses5.jpeg" alt="Minimalist Metal" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Minimalist Metal</h3>
+                    <p class="product-price">₹3589</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card" data-product-id="104">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses6.jpeg" alt="Designer shimar" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Designer shimar</h3>
+                    <p class="product-price">₹2244</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Product 7 -->
+            <div class="product-card" data-product-id="104">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses7.jpeg" alt="Lightweight rimless" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Lightweight rimless</h3>
+                    <p class="product-price">₹3200</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            <!-- Product 8 -->
+            <div class="product-card" data-product-id="104">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses8.jpeg" alt="Square Modern" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Square Modern</h3>
+                    <p class="product-price">₹4215</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            <!-- Additional 8 products to complete the 16 products mentioned -->
+            <div class="product-card" data-product-id="104">
+                <div class="product-image">
+                    <img src="../images/products/eyeglasses9.jpeg" alt="Casual everyday" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Casual everyday</h3>
+                    <p class="product-price">₹1899</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="product-card" data-product-id="104">
+            <div class="product-image">
+                <img src="../images/products/eyeglasses10.jpeg" alt="EternaVision" />
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">EternaVision</h3>
+                <p class="product-price">₹4399</p>
+                <div class="product-actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="try-on">Try On</button>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+    <div class="product-card" data-product-id="104">
+        <div class="product-image">
+            <img src="../images/products/eyeglasses17.jpeg" alt="Imperial Eyes" />
+        </div>
+        <div class="product-details">
+            <h3 class="product-name">Imperial Eyes</h3>
+            <p class="product-price">₹2566</p>
+            <div class="product-actions">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="try-on">Try On</button>
+            </div>
+        </div>
+    </div>
+</div>
+            
+<div class="product-card" data-product-id="104">
+    <div class="product-image">
+        <img src="../images/products/eyeglasses12.jpeg" alt="Aurora Frames" />
+    </div>
+    <div class="product-details">
+        <h3 class="product-name">Aurora Frames</h3>
+        <p class="product-price">₹1999</p>
+        <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+        </div>
+    </div>
+</div>
+</div>
+            
+<div class="product-card" data-product-id="104">
+    <div class="product-image">
+        <img src="../images/products/eyeglasses13.jpeg" alt="Regal Spectacles" />
+    </div>
+    <div class="product-details">
+        <h3 class="product-name">Regal Spectacles</h3>
+        <p class="product-price">₹4500</p>
+        <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="product-card" data-product-id="104">
+    <div class="product-image">
+        <img src="../images/products/eyeglasses14.jpeg" alt="Crown Clarity" />
+    </div>
+    <div class="product-details">
+        <h3 class="product-name">Crown Clarity</h3>
+        <p class="product-price">₹5999</p>
+        <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+        </div>
+    </div>
+</div>
+</div>
+            
+<div class="product-card" data-product-id="104">
+    <div class="product-image">
+        <img src="../images/products/eyeglasses15.jpeg" alt="Majestic Sight" />
+    </div>
+    <div class="product-details">
+        <h3 class="product-name">Majestic Sight</h3>
+        <p class="product-price">₹2999</p>
+        <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <div class="pagination">
+            <button class="active">1</button>
+            <button>2</button>
+            <button>></button>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="eyeglasses.html">Eyeglasses</a></li>
+                    <li><a href="sunglasses.html">Sunglasses</a></li>
+                    <li><a href="computer-glasses.html">Computer Glasses</a></li>
+                    <li><a href="contact-lenses.html">Contact Lenses</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Help & FAQs</h3>
+                <ul>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Prescription Help</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="mailto:support@visionare.com">Email: support@visionare.com</a></li>
+                    <li><a href="tel:18005555367">Phone: 1-800-555-LENS</a></li>
+                    <li>Hours: 9am-6pm, Mon-Fri</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Visionare. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/try-on.js"></script>
+    <script>
+        // Page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter buttons functionality
+            const filterButtons = document.querySelectorAll('.filter-options button');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    button.classList.toggle('active');
+                    // In a real app, this would trigger filtering of products
+                });
+            });
+            
+            // Sort dropdown functionality
+            const sortSelect = document.getElementById('sort');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    // In a real app, this would trigger sorting of products
+                    console.log('Sort by: ' + this.value);
+                });
+            }
+            
+            // Pagination functionality
+            const paginationButtons = document.querySelectorAll('.pagination button');
+            
+            paginationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    paginationButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    if (button.textContent !== '>') {
+                        button.classList.add('active');
+                    }
+                    
+                    // In a real app, this would load the corresponding page of products
+                });
+            });
+        });
+    </script>
+</body>
+</html>

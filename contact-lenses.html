@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Lenses | Visionare</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/header.css"/>
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <link rel="stylesheet" href="../css/products.css"/>
+  <style>
+    .page-banner {
+      height: 30vh;
+      background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/contact-lenses-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 5%;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      color: #8b7355;
+      margin-bottom: 15px;
+    }
+
+    .page-description {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .page-banner {
+        height: 25vh;
+      }
+
+      .page-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">Visionare</div>
+      <div class="user-actions">
+        <a href="#">Store Locator</a>
+        <a href="login.html">Sign In / Register</a>
+        <a href="cart.html" class="cart-icon">Cart <span class="cart-count">0</span></a>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="eyeglasses.html">Eyeglasses</a></li>
+        <li><a href="sunglasses.html">Sunglasses</a></li>
+        <li><a href="computer-glasses.html">Computer Glasses</a></li>
+        <li><a href="contact-lenses.html" class="active">Contact Lenses</a></li>
+        <li><a href="../index.html#try-on-section">3D Try On</a></li>
+      </ul>
+    </nav>
+  </header>
+        <!-- Sunglasses Banner -->
+        <div class="contact-lenses-banner">
+          <img src="/images/products/contactlensebanner.jpg" alt="Contact Lenses Banner">
+        </div>
+        
+        <div class="contact-lenses-description" style="text-align: center; padding: 20px;">
+          <h1 style="color: #8B7355;">Contact Lenses</h1>
+          <p style="color: #555;">
+            Discover comfortable and clear vision with our range of soft and colored contact lenses. Easy to use, all-day comfort guaranteed.
+          </p>
+        </div>
+        
+        
+
+  <section class="product-list">
+    <div class="products-header">
+      <div class="product-count">Showing 6 of 12 products</div>
+      <div class="sort-options">
+        <select name="sort" id="sort">
+          <option value="popular">Most Popular</option>
+          <option value="newest">Newest Arrivals</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card" data-product-id="401">
+        <div class="product-image">
+          <img src="../images/products/lense1.jpg" alt="Platinum Veil" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Platinum Veil</h3>
+          <p class="product-price">₹599</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="product-card" data-product-id="401">
+        <div class="product-image">
+          <img src="../images/products/lense2.jpg" alt="Azure Mirage" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Azure Mirage</h3>
+          <p class="product-price">₹899</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="product-card" data-product-id="401">
+        <div class="product-image">
+          <img src="../images/products/lense3.jpg" alt="Deep Ebony" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Deep Ebony</h3>
+          <p class="product-price">₹499</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="product-card" data-product-id="401">
+        <div class="product-image">
+          <img src="../images/products/lense4.jpg.jpeg" alt="Mystic Mocha" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Mystic Mocha</h3>
+          <p class="product-price">₹625</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <!-- More contact lenses products... -->
+    </div>
+  </section>
+
+    <!-- Other sections of your page (e.g., product listing, images) -->
+
+<!-- Newsletter Subscription Section -->
+<div class="newsletter">
+  <h4>Stay in the Loop!</h4>
+  <p>Sign up for exclusive offers, new arrivals, and updates straight to your inbox.</p>
+  
+  <!-- Subscription Form -->
+  <form action="subscribe.php" method="POST" class="newsletter-form">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  
+  <!-- Privacy Statement -->
+  <p class="privacy-policy">We respect your privacy. No spam, we promise!</p>
+</div>
+
+<!-- Footer -->
+
+  <footer>
+    <p>&copy; 2025 Visionare. All rights reserved.</p>
+  </footer>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

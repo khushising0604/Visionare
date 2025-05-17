@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunglasses | Visionare</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <style>
+        .page-banner {
+            height: 30vh;
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/sunglasses-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: #8b7355;
+            margin-bottom: 15px;
+        }
+
+        .page-description {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .page-banner {
+                height: 25vh;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">Visionare</div>
+            <div class="user-actions">
+                <a href="#">Store Locator</a>
+                <a href="login.html">Sign In / Register</a>
+                <a href="cart.html" class="cart-icon">Cart <span class="cart-count">0</span></a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="eyeglasses.html">Eyeglasses</a></li>
+                <li><a href="sunglasses.html" class="active">Sunglasses</a></li>
+                <li><a href="computer-glasses.html">Computer Glasses</a></li>
+                <li><a href="contact-lenses.html">Contact Lenses</a></li>
+                <li><a href="../index.html#try-on-section">3D Try On</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sunglasses Banner -->
+    <div class="sunglasses-banner">
+        <img src="/images/banners/Banner1.jpeg" alt="Sunglasses Banner">
+    </div>
+
+    <div class="page-banner">
+        <div>
+            <h1 class="page-title">Sunglasses</h1>
+            <p class="page-description">Explore our stylish collection of sunglasses designed to protect your eyes and elevate your look. UV protection meets bold fashion.</p>
+        </div>
+    </div>
+
+    <section class="product-list">
+        <div class="products-header">
+            <div class="product-count">Showing 1 of 24 products</div>
+            <div class="sort-options">
+                <select name="sort" id="sort">
+                    <option value="popular">Most Popular</option>
+                    <option value="newest">Newest Arrivals</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card" data-product-id="201">
+                <div class="product-image">
+                    <img src="../images/products/sunglasses1.jpeg" alt="Beach Breeze Sunglasses" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Beach Breeze</h3>
+                    <p class="product-price">₹1499</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="202">
+                <div class="product-image">
+                    <img src="../images/products/sunglasses2.jpeg" alt="Solar Reign" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Solar Reign</h3>
+                    <p class="product-price">₹2499</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="203">
+                <div class="product-image">
+                    <img src="../images/products/sunglasses3.jpeg" alt="Vision Empire" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Vision Empire</h3>
+                    <p class="product-price">₹2699</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="204">
+                <div class="product-image">
+                    <img src="../images/products/sunglasses4.jpeg" alt="Ultra Gaze" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Ultra Gaze</h3>
+                    <p class="product-price">₹4999</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="205">
+                <div class="product-image">
+                    <img src="../images/products/sunglasses7.jpeg" alt="Trail Vision" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Trail Vision</h3>
+                    <p class="product-price">₹4999</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="206">
+                <div class="product-image">
+                    <img src="../images/products/sunglasses8.jpeg" alt="Apex Shades" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Apex Shades</h3>
+                    <p class="product-price">₹4999</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="207">
+                <div class="product-image">
+                    <img src="../images/products/sunglasses9.jpeg" alt="Edge Eyewear" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Edge Eyewear</h3>
+                    <p class="product-price">₹4999</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="208">
+                <div class="product-image">
+                    <img src="../images/products/sunglasses10.jpeg" alt="Shade Society" />
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Shade Society</h3>
+                    <p class="product-price">₹4999</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Visionare. All rights reserved.</p>
+    </footer>
+</body>
+</html>

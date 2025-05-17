@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visionare | Premium Eyewear</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/try-on.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <!-- Logo on the left side and text next to it -->
+            <div class="logo">
+                <img src="images/MAINLOGO.JPG" alt="Visionare Logo" class="logo-img">
+                <span class="logo-text">VISIONARE</span>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search for eyewear..." />
+                <button type="submit">🔍</button>
+            </div>
+
+            <button id="dark-mode-toggle">🌙</button>
+
+              
+            <div class="user-actions">
+                <a href="pages/store.html">Store Locator</a>
+                <a href="pages/login.html">Sign In / Register</a>
+                <a href="pages/cart.html" class="cart-icon">Cart <span class="cart-count">0</span></a>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Eyeglasses ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/eyeglasses-men.html">Men</a></li>
+                        <li><a href="pages/eyeglasses-women.html">Women</a></li>
+                        <li><a href="pages/eyeglasses-all.html">All</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/sunglasses.html">Sunglasses</a></li>
+                <li><a href="pages/computer-glasses.html">Computer Glasses</a></li>
+                <li><a href="pages/contact-lenses.html">Contact Lenses</a></li>
+                <li><a href="pages/try-on.html">3D Try On</a></li>
+                <li><a href="pages/store.html">Store Locator</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="images/banners/Banner1.jpeg" alt="Slide 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/banners/2.jpg" alt="Slide 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/banners/3.jpg" alt="Slide 3">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/banners/4.jpg" alt="Slide 4">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/banners/5.jpg" alt="Slide 5">
+        </div>
+
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </section>
+    
+    <section class="categories">
+        <h2 class="section-title">Browse Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/products/eyeglasses15.jpeg" alt="Eyeglasses">
+                </div>
+                <div class="category-details">
+                    <h3>Eyeglasses</h3>
+                    <p>Prescription and fashion frames for everyday wear</p>
+                    <a href="pages/eyeglasses.html" class="cta-button">Explore</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/products/sunglasses1.jpeg" alt="Sunglasses">
+                </div>
+                <div class="category-details">
+                    <h3>Sunglasses</h3>
+                    <p>Stylish protection for your eyes</p>
+                    <a href="pages/sunglasses.html" class="cta-button">Explore</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/products/computerg1.jpg" alt="Computer Glasses">
+                </div>
+                <div class="category-details">
+                    <h3>Computer Glasses</h3>
+                    <p>Protect your eyes from digital strain</p>
+                    <a href="pages/computer-glasses.html" class="cta-button">Explore</a>
+                </div>
+            </div>
+              
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/products/lense1.jpg" alt="Contact Lenses">
+                </div>
+                <div class="category-details">
+                    <h3>Contact Lenses</h3>
+                    <p>Daily, monthly and colored lenses</p>
+                    <a href="pages/contact-lenses.html" class="cta-button">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="featured-products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card" data-product-id="1">
+                <div class="product-image">
+                    <img src="images/products/eyeglasses3.jpeg" alt="Classic Aviator Sunglasses">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Classic Aviator</h3>
+                    <p class="product-price">₹2499.99</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="2">
+                <div class="product-image">
+                    <img src="images/products/eyeglasses2.jpeg" alt="Round Retro Glasses">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Round Retro</h3>
+                    <p class="product-price">₹2566</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="3">
+                <div class="product-image">
+                    <img src="images/products/eyeglasses8.jpeg" alt="Square Modern">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Square Modern</h3>
+                    <p class="product-price">₹2566</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-id="4">
+                <div class="product-image">
+                    <img src="images/products/eyeglasses12.jpeg" alt="Cat Eyeglasses">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Cat Eyeglasses</h3>
+                    <p class="product-price">₹2566</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="try-on">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="reviews-section">
+        <h2 class="reviews-title">What Our Customers Say</h2>
+      
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                <p class="review-text">Loved the virtual try-on feature! Super fun and easy to use.</p>
+                <p class="review-author">— Riya M.</p>
+            </div>
+      
+            <div class="review-card">
+                <div class="stars">⭐️⭐️⭐️⭐️</div>
+                <p class="review-text">Helped me pick the perfect frame without visiting a store.</p>
+                <p class="review-author">— Arjun T.</p>
+            </div>
+      
+            <div class="review-card">
+                <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                <p class="review-text">Smooth experience. Try-on is surprisingly accurate!</p>
+                <p class="review-author">— Sneha D.</p>
+            </div>
+      
+            <div class="review-card">
+                <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                <p class="review-text">Felt luxurious trying glasses online. A premium experience!</p>
+                <p class="review-author">— Karan P.</p>
+            </div>
+      
+            <div class="review-card">
+                <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                <p class="review-text">Found my perfect pair in minutes. Loved the clean look.</p>
+                <p class="review-author">— Priya S.</p>
+            </div>
+      
+            <div class="review-card">
+                <div class="stars">⭐️⭐️⭐️⭐️</div>
+                <p class="review-text">Elegant frames and smooth checkout. Great service!</p>
+                <p class="review-author">— Rahul V.</p>
+            </div>
+        </div>
+    </section>
+      
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="pages/eyeglasses.html">Eyeglasses</a></li>
+                    <li><a href="pages/sunglasses.html">Sunglasses</a></li>
+                    <li><a href="pages/computer-glasses.html">Computer Glasses</a></li>
+                    <li><a href="pages/contact-lenses.html">Contact Lenses</a></li>
+                    <li><a href="pages/accessories.html">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Help & FAQs</h3>
+                <ul>
+                    <li><a href="pages/track-order.html">Track Order</a></li>
+                    <li><a href="pages/returns.html">Returns & Exchanges</a></li>
+                    <li><a href="pages/warranty.html">Warranty</a></li>
+                    <li><a href="pages/shipping.html">Shipping Information</a></li>
+                    <li><a href="pages/prescription-help.html">Prescription Help</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="pages/our-story.html">Our Story</a></li>
+                    <li><a href="pages/careers.html">Careers</a></li>
+                    <li><a href="pages/press.html">Press</a></li>
+                    <li><a href="pages/blog.html">Blog</a></li>
+                    <li><a href="pages/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="mailto:support@visionare.com">Email: support@visionare.com</a></li>
+                    <li><a href="tel:9356350418">Phone: 9356350418</a></li>
+                    <li>Hours: 9am-6pm, Mon-Fri</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="faq-section">
+          <h2>Need Help? Ask a Question</h2>
+          <a href="pages/faq.html" class="faq-button">📩 Submit a Question</a>
+      </section>
+        
+        <div class="copyright">
+            © 2025 Visionare. All Rights Reserved.
+        </div>
+        <div class="typewriter">Made with ❤️ just for you...</div>
+
+        
+
+    </footer>
+
+    <script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/try-on.js"></script>
+<script src="js/form-handler.js"></script>
+<script>
+    // Slideshow JavaScript
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        slides[slideIndex-1].style.display = "block";
+    }
+    
+    // Auto slideshow
+    setInterval(function() {
+        plusSlides(1);
+    }, 5000); // Change slide every 5 seconds
+</script>
+    
+</body>
+</html>

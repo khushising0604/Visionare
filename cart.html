@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart | Visionare</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/header.css"/>
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <style>
+    .cart-page {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .cart-title {
+      font-size: 2rem;
+      color: #8b7355;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fffdf9;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .cart-table th,
+    .cart-table td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-table th {
+      background-color: #f6f2eb;
+      color: #333;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .cart-summary {
+      margin-top: 20px;
+      text-align: right;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .checkout-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #8b7355;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background-color: #a48d6b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">Visionare</div>
+      <div class="user-actions">
+        <a href="#">Store Locator</a>
+        <a href="login.html">Sign In / Register</a>
+        <a href="cart.html" class="cart-icon">Cart <span class="cart-count">2</span></a>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="eyeglasses.html">Eyeglasses</a></li>
+        <li><a href="sunglasses.html">Sunglasses</a></li>
+        <li><a href="computer-glasses.html">Computer Glasses</a></li>
+        <li><a href="contact-lenses.html">Contact Lenses</a></li>
+        <li><a href="../index.html#try-on-section">3D Try On</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="cart-page">
+    <h1 class="cart-title">Your Shopping Cart</h1>
+
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cart-item">
+          <td><img src="../images/sample-glasses.jpg" alt="Product Image"/></td>
+          <td>Vision Bold Glasses</td>
+          <td>₹2000</td>
+          <td>1</td>
+          <td>₹5499</td>
+        </tr>
+        <tr class="cart-item">
+          <td><img src="../images/sample-lens.jpg" alt="Product Image"/></td>
+          <td>ColorPop Blue Lenses</td>
+          <td>₹2299</td>
+          <td>1</td>
+          <td>₹3499</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <p><strong>Subtotal:</strong> ₹9198</p>
+      <button class="checkout-btn" onclick="location.href='checkout.html'">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Visionare. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cartTableBody = document.querySelector('.cart-table tbody');
+      const cartSummary = document.querySelector('.cart-summary p');
+      let cart = JSON.parse(localStorage.getItem('visionCraftCart')) || [];
+  
+      function renderCart() {
+        cartTableBody.innerHTML = '';
+        let subtotal = 0;
+  
+        cart.forEach((item, index) => {
+          const total = item.price * item.quantity;
+          subtotal += total;
+  
+          const row = document.createElement('tr');
+          row.classList.add('cart-item');
+          row.innerHTML = `
+            <td><img src="../images/sample-glasses.jpg" alt="${item.name}"/></td>
+            <td>${item.name}</td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td>
+              <button onclick="updateQuantity(${index}, -1)">-</button>
+              ${item.quantity}
+              <button onclick="updateQuantity(${index}, 1)">+</button>
+            </td>
+            <td>$${total.toFixed(2)}</td>
+          `;
+          cartTableBody.appendChild(row);
+        });
+  
+        cartSummary.innerHTML = `<strong>Subtotal:</strong> $${subtotal.toFixed(2)}`;
+      }
+  
+      window.updateQuantity = function (index, change) {
+        cart[index].quantity += change;
+        if (cart[index].quantity <= 0) {
+          cart.splice(index, 1); // remove item if quantity goes to 0
+        }
+        localStorage.setItem('visionCraftCart', JSON.stringify(cart));
+        renderCart();
+        updateCartCount();
+      };
+  
+      function updateCartCount() {
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const cartCount = document.querySelector('.cart-count');
+        if (cartCount) cartCount.textContent = count;
+      }
+  
+      renderCart();
+    });
+  </script>
+  
+
+
+</body>
+</html>

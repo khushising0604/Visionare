@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Visionare</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/header.css"/>
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <style>
+    .register-container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fffdf9;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #8b7355;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-section label {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .form-section input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fdfaf5;
+    }
+
+    .register-btn, .login-link {
+      background-color: #8b7355;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .register-btn:hover, .login-link:hover {
+      background-color: #a48d6b;
+    }
+
+    .login-link {
+      background: none;
+      border: none;
+      color: #8b7355;
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+
+    .login-link:hover {
+      color: #a48d6b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">Visionare</div>
+      <div class="user-actions">
+        <a href="#">Store Locator</a>
+        <a href="login.html">Sign In / Register</a>
+        <a href="cart.html" class="cart-icon">Cart</a>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="eyeglasses.html">Eyeglasses</a></li>
+        <li><a href="sunglasses.html">Sunglasses</a></li>
+        <li><a href="computer-glasses.html">Computer Glasses</a></li>
+        <li><a href="contact-lenses.html">Contact Lenses</a></li>
+        <li><a href="../index.html#try-on-section">3D Try On</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="register-container">
+    <h2>Register</h2>
+    <form id="register-form">
+      <div class="form-section">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-section">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-section">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+
+      <div class="form-section">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+      </div>
+
+      <button type="submit" class="register-btn">Register</button>
+    </form>
+    <p>Already have an account? <button class="login-link" onclick="window.location.href='login.html'">Login here</button></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Visionare. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('register-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const fullname = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+      }
+
+      // Add backend registration functionality here (e.g., send data to your server to create the user)
+
+      console.log('User registered:', fullname, email, password);
+      
+      // For now, redirect to the login page after registration (you can replace this with actual registration logic)
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

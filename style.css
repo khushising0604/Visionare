@@ -1,0 +1,936 @@
+/* Remove default spacing */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f6f2; /* Light beige background */
+    color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-right: 20px;
+}
+
+.navbar-button {
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.navbar-button:hover {
+  background-color: #45a049;
+}
+
+/* Default light mode */
+body {
+  background-color: white;
+  color: black;
+}
+
+header, footer {
+  background-color: #f8f8f8;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+header.dark-mode, footer.dark-mode {
+  background-color: #333;
+}
+
+.navbar.dark-mode a {
+  color: white;
+}
+
+.navbar.dark-mode a:hover {
+  background-color: #555;
+}
+
+button.dark-mode {
+  background-color: #444;
+  color: white;
+}
+
+/* Update other sections accordingly to fit your dark theme */
+
+
+
+/* Common elements */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #8b7355;
+}
+
+.cta-button {
+    background-color: #8b7355;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #75614a;
+}
+
+/* For accessibility */
+a:focus, button:focus {
+    outline: 2px solid #8b7355;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+/* Flex container for logo and text */
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures left and right spacing */
+    padding: 10px 20px; /* Optional padding */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background-color: #fff;
+}
+
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 500px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  background-color: #8B7355;
+  color: white;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+
+/* Flex container for logo and text */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+/* Logo image */
+.logo img {
+    height: 80px;
+    width: auto;
+    margin-right: 5px;
+}
+
+/* Logo text */
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Header reset */
+header {
+    margin: 0;
+    padding: 0;
+}
+.hero-banner img {
+    width: 60%;
+    max-height: 700px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  .slideshow-container {
+    position: relative;
+    max-width: 60%;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .mySlides img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    margin-top: -22px;
+    color: #333;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: #ddd;
+  }
+  .eyeglasses-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .eyeglasses-banner img {
+    width: 102%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  .sunglasses-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .sunglasses-banner img {
+    width: 100%;
+    height: 720px;
+    display: block;
+    object-fit: cover;
+  }
+  .category-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-details {
+  padding: 15px;
+}
+
+.product-name {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.product-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.product-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart {
+  background-color: #a68a64;
+  color: white;
+}
+
+.try-on {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd !important;
+}
+
+.add-to-cart:hover {
+  background-color: #8d7555;
+}
+
+.try-on:hover {
+  background-color: #f5f5f5;
+}
+
+/* Contact Lenses Page Banner */
+.contact-lenses-banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.contact-lenses-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.contact-banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay for readability */
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 90%;
+}
+
+
+
+
+
+.page-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.page-description {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.computer-glasses-banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.computer-glasses-banner img {
+  width: 100%;
+  height: 680px;
+  display: block;
+  object-fit: cover;
+}
+
+.computer-glasses-banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 90%;
+}
+.reviews-section {
+  background-color: #f8f6f3;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #3a3a3a;
+}
+
+.reviews-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2b2b2b;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid #e2dfda;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.stars {
+  font-size: 1.5rem;
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.review-author {
+  font-size: 1rem;
+  color: #777;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+/* Newsletter Section */
+.newsletter {
+  background-color: #f5f5f5; /* Light beige background */
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid #8b7355; /* Accent color similar to your theme */
+  margin-top: 30px;
+}
+
+.newsletter h4 {
+  font-size: 1.8rem;
+  color: #8b7355; /* Accent color */
+  margin-bottom: 15px;
+}
+
+.newsletter p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background-color: #8b7355; /* Accent color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.newsletter-form button:hover {
+  background-color: #6b5b3f; /* Darker shade of accent color */
+}
+
+.privacy-policy {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+/* Style for subscription message */
+.newsletter .message {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #4CAF50; /* Green for success */
+  text-align: center;
+}
+.feedback-section {
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin: 40px 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.feedback-section h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.star {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star.selected {
+  color: #ff9800;
+}
+
+textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #8b7355;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6f4e37;
+}
+
+#thank-you-message {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: green;
+}
+/* Initially, review cards are off-screen */
+/* Bounce In Animation */
+.review-card {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: bounceIn 1s ease forwards;
+}
+
+/* Bounce In Keyframes */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover Effect - Scale Up on Hover */
+.review-card:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Hide all images by default */
+.mySlides {
+  display: none;
+}
+
+/* Slideshow images */
+.mySlides img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensures the image covers the area */
+}
+
+/* Navigation Arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Create this as css/form.css */
+
+.faq-section {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.faq-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.faq-button:hover {
+  background-color: #3a80d2;
+}
+
+.faq-form {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.faq-form input,
+.faq-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.faq-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.faq-form .submit-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.faq-form .submit-button:hover {
+  background-color: #3a80d2;
+}
+
+/* Message styles */
+.message {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.message.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+.message.error {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+
+
+footer:hover {
+  background: #eee;
+  box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
+  transition: all 0.4s ease-in-out;
+}
+button:hover,
+.btn:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+  width: fit-content;
+  margin: 30px auto;
+  font-family: 'Comic Sans MS', cursive;
+  color: #ffb6c1;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+/* Add to your main CSS */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5eee6;
+}
+::-webkit-scrollbar-thumb {
+  background: #c8b6a6;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8a694;
+}
+
+.add-to-cart-btn {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.05);
+  background-color: #f0cba7; /* Light beige shade */
+}
+
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #f0cba7;
+  transition: width 0.3s;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.product-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Light Theme (default) */
+body {
+  background-color: #f5f5f5; /* Beige background */
+  color: #333; /* Dark text */
+}
+
+/* Dark Theme */
+body.dark-mode {
+  background-color: #2e2e2e; /* Dark gray background */
+  color: #e0e0e0; /* Light text */
+}
+
+a {
+  color: #5a5a5a;
+}
+
+body.dark-mode a {
+  color: #bbb; /* Lighter link color in dark mode */
+}
+
+/* Optional: Customize buttons and other elements */
+button {
+  background-color: #fff;
+  color: #333;
+}
+
+body.dark-mode button {
+  background-color: #444;
+  color: #e0e0e0;
+}

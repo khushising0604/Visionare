@@ -1,0 +1,148 @@
+/* Header styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b7355; /* Beige-brown color for logo */
+}
+
+.user-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.user-actions a:hover {
+    color: #8b7355;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #8b7355;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    padding: 15px 5%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8b7355;
+}
+
+/* Mobile menu for smaller screens */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #8b7355;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        display: none; /* Hide by default, show with JS */
+    }
+    
+    nav.open ul {
+        display: flex;
+    }
+    
+    .user-actions {
+        gap: 10px;
+    }
+}
+/* Navbar Dropdown */
+.navbar ul li.dropdown {
+    position: relative;
+  }
+  
+  .navbar ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    z-index: 1000;
+  }
+  
+  .navbar ul li .dropdown-menu li {
+    display: block;
+  }
+  
+  .navbar ul li .dropdown-menu li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #5a412b;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .navbar ul li .dropdown-menu li a:hover {
+    background-color: #f0e6d6;
+  }
+  
+  /* Show menu on hover */
+  .navbar ul li.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  

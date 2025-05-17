@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Eyewear Try-On</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem;
+      background-color: white;
+    }
+
+    #tryon-container {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      aspect-ratio: 4/3;
+      margin-top: 1rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    video, canvas {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      object-fit: cover;
+    }
+
+    #controls {
+      margin-top: 1rem;
+      background: rgb(185, 181, 181);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .glasses-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .glasses-options button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .glasses-options button:hover {
+      background: #eee;
+    }
+
+    @media (max-width: 600px) {
+      #controls {
+        width: 100%;
+      }
+
+      .glasses-options {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>See how our frames look on you! Upload your photo and try on any glasses in our collection.</h2>
+
+  <div id="tryon-container">
+    <video id="video" autoplay playsinline muted></video>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div id="controls">
+    <div><strong>Frame:</strong> Crystal</div>
+    <div class="glasses-options">
+      <button type="button" onclick="changeGlasses('square')">square</button>
+      <button type="button" onclick="changeGlasses('eyelol')">eyelol</button>
+      <button type="button" onclick="changeGlasses('suntry')">sunglasses</button>
+      <button type="button" onclick="changeGlasses('blue')">blue</button>
+
+    </div>
+  </div>
+
+  <!-- Hidden image that gets updated and drawn on canvas -->
+  <img id="glasses" src="../images/products/eyelol.png" style="display: none;" />
+  <img id="glasses" src="../images/products/square.png" style="display: none;" />
+  <img id="glasses" src="../images/products/blue.png" style="display: none;" />
+  <img id="glasses" src="../images/products/suntry.png" style="display: none;" />
+  
+
+ 
+
+  <!-- MediaPipe scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+
+  <!-- Your custom script -->
+  <script src="../js/try-on.js"></script>
+</body>
+</html>

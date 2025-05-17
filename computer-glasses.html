@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computer Glasses | Visionare</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/products.css">
+  <style>
+    .page-banner {
+      height: 30vh;
+      background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../images/computer-glasses-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 5%;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      color: #8b7355;
+      margin-bottom: 15px;
+    }
+
+    .page-description {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .page-banner {
+        height: 25vh;
+      }
+
+      .page-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">Visionare</div>
+      <div class="user-actions">
+        <a href="#">Store Locator</a>
+        <a href="login.html">Sign In / Register</a>
+        <a href="cart.html" class="cart-icon">Cart <span class="cart-count">0</span></a>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="eyeglasses.html">Eyeglasses</a></li>
+        <li><a href="sunglasses.html">Sunglasses</a></li>
+        <li><a href="computer-glasses.html" class="active">Computer Glasses</a></li>
+        <li><a href="contact-lenses.html">Contact Lenses</a></li>
+        <li><a href="../index.html#try-on-section">3D Try On</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="computer-glasses-banner">
+    <img src="/images/products/computerbanner.jpg" alt="Computer Glasses Banner">
+  </div>
+
+  <div class="page-banner">
+    <div>
+      <h1 class="page-title">Computer Glasses</h1>
+      <p class="page-description">
+        Protect your eyes from screen strain with our stylish and effective blue light-blocking computer glasses. Perfect for work, study, and screen time.
+      </p>
+    </div>
+  </div>
+
+  <section class="product-list">
+    <div class="products-header">
+      <div class="product-count">Showing 8 of 12 products</div>
+      <div class="sort-options">
+        <select name="sort" id="sort">
+          <option value="popular">Most Popular</option>
+          <option value="newest">Newest Arrivals</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <!-- Product Cards -->
+      <div class="product-card" data-product-id="401">
+        <div class="product-image">
+          <img src="../images/products/computerg1.jpg" alt="Veridian Glass" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Veridian Glass</h3>
+          <p class="product-price">₹999</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-product-id="402">
+        <div class="product-image">
+          <img src="../images/products/computerg2.jpg" alt="BlueGuard Elite" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">BlueGuard Elite</h3>
+          <p class="product-price">₹999</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-product-id="403">
+        <div class="product-image">
+          <img src="../images/products/computerg3.jpg" alt="Clarity Luxe" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Clarity Luxe</h3>
+          <p class="product-price">₹999</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-product-id="404">
+        <div class="product-image">
+          <img src="../images/products/computerg4.jpg" alt="Sublime Screen" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Sublime Screen</h3>
+          <p class="product-price">₹999</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-product-id="405">
+        <div class="product-image">
+          <img src="../images/products/computerg5.jpg" alt="Meridian View" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Meridian View</h3>
+          <p class="product-price">₹999</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-product-id="406">
+        <div class="product-image">
+          <img src="../images/products/computerg6.jpg" alt="DigiView Specs" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">DigiView Specs</h3>
+          <p class="product-price">₹999</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-product-id="407">
+        <div class="product-image">
+          <img src="../images/products/computerg7.jpg" alt="ScreenSync Eyewear" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">ScreenSync Eyewear</h3>
+          <p class="product-price">₹999</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-product-id="408">
+        <div class="product-image">
+          <img src="../images/products/computerg8.jpg" alt="Node Vision" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">Node Vision</h3>
+          <p class="product-price">₹999</p>
+          <div class="product-actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="try-on">Try On</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback Section -->
+ <!-- Feedback Section -->
+<section class="feedback-section">
+  <h3>We Value Your Feedback!</h3>
+  <p>Rate your experience and leave any comments below:</p>
+
+  <div class="stars">
+    <span class="star" data-value="1">&#9733;</span>
+    <span class="star" data-value="2">&#9733;</span>
+    <span class="star" data-value="3">&#9733;</span>
+    <span class="star" data-value="4">&#9733;</span>
+    <span class="star" data-value="5">&#9733;</span>
+  </div>
+
+  <textarea id="feedback-text" placeholder="Write your feedback here..."></textarea>
+  <button id="submit-feedback">Submit</button>
+  <p id="thank-you-message" style="display: none;">Thank you for your feedback!</p>
+</section>
+
+
+
+  <footer>
+    <p>&copy; 2025 Visionare. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/try-on.js"></script>
+</body>
+</html>

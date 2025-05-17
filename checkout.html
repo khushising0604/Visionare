@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | Visionare</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/header.css"/>
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <style>
+    .checkout-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #fffdf9;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #8b7355;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-section label {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .form-section input, .form-section select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fdfaf5;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .place-order-btn {
+      background-color: #8b7355;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .place-order-btn:hover {
+      background-color: #a48d6b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">Visionare</div>
+      <div class="user-actions">
+        <a href="#">Store Locator</a>
+        <a href="login.html">Sign In / Register</a>
+        <a href="cart.html" class="cart-icon">Cart</a>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="eyeglasses.html">Eyeglasses</a></li>
+        <li><a href="sunglasses.html">Sunglasses</a></li>
+        <li><a href="computer-glasses.html">Computer Glasses</a></li>
+        <li><a href="contact-lenses.html">Contact Lenses</a></li>
+        <li><a href="../index.html#try-on-section">3D Try On</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="checkout-container">
+    <h2>Checkout</h2>
+
+    <div id="checkout-cart-summary">
+        <h3 style="color: #8b7355; margin-bottom: 10px;">Your Cart</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+          <thead>
+            <tr style="background-color: #f4f1ed;">
+              <th style="text-align: left; padding: 10px;">Product</th>
+              <th style="padding: 10px;">Price</th>
+              <th style="padding: 10px;">Qty</th>
+              <th style="padding: 10px;">Total</th>
+            </tr>
+          </thead>
+          <tbody id="checkout-cart-body"></tbody>
+        </table>
+        <p id="checkout-subtotal" style="text-align: right; font-weight: bold;"></p>
+      </div>
+      
+    <!-- Main checkout form -->
+    <form id="checkoutForm">
+      <div class="form-grid">
+        <div class="form-section">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-section">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label for="address">Shipping Address</label>
+        <input type="text" id="address" placeholder="Enter your address" required>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-section">
+          <label for="city">City</label>
+          <input type="text" id="city" required>
+        </div>
+        <div class="form-section">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" required>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label for="payment">Payment Method</label>
+        <select id="payment" required>
+          <option value="">-- Select Payment Method --</option>
+          <option value="cod">Cash on Delivery</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="upi">UPI</option>
+        </select>
+      </div>
+
+      <button type="submit" class="place-order-btn">Place Order</button>
+    </form>
+    
+    <!-- Hidden Formspree form for order notifications -->
+    <form id="orderNotificationForm" action="https://formspree.io/f/mpwdlvzg" method="POST" style="display:none;">
+      <input type="text" name="orderID" id="orderID">
+      <input type="text" name="customerName" id="notifyName">
+      <input type="email" name="customerEmail" id="notifyEmail">
+      <input type="text" name="shippingAddress" id="notifyAddress">
+      <input type="text" name="orderDetails" id="orderDetails">
+      <input type="text" name="orderTotal" id="orderTotal">
+      <input type="text" name="paymentMethod" id="notifyPayment">
+      <button type="submit">Send Notification</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Visionare. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cart = JSON.parse(localStorage.getItem('visionCraftCart')) || [];
+      const cartBody = document.getElementById('checkout-cart-body');
+      const subtotalEl = document.getElementById('checkout-subtotal');
+  
+      if (cart.length === 0) {
+        document.getElementById('checkout-cart-summary').innerHTML = "<p>Your cart is empty.</p>";
+        return;
+      }
+  
+      let subtotal = 0;
+  
+      cart.forEach(item => {
+        const total = item.price * item.quantity;
+        subtotal += total;
+  
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td style="padding: 10px;">${item.name}</td>
+          <td style="padding: 10px;">$${item.price.toFixed(2)}</td>
+          <td style="padding: 10px;">${item.quantity}</td>
+          <td style="padding: 10px;">$${total.toFixed(2)}</td>
+        `;
+        cartBody.appendChild(row);
+      });
+  
+      subtotalEl.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkoutForm = document.getElementById('checkoutForm');
+      const cart = JSON.parse(localStorage.getItem('visionCraftCart')) || [];
+      
+      checkoutForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        
+        // Gather customer information
+        const customerName = document.getElementById('fullname').value;
+        const customerEmail = document.getElementById('email').value;
+        const shippingAddress = document.getElementById('address').value + ', ' + 
+                               document.getElementById('city').value + ', ' + 
+                               document.getElementById('zip').value;
+        const paymentMethod = document.getElementById('payment').value;
+        
+        // Calculate order total
+        let orderTotal = 0;
+        cart.forEach(item => {
+          orderTotal += item.price * item.quantity;
+        });
+        
+        // Generate order ID
+        const orderID = 'VIS-' + Date.now().toString().slice(-6);
+        
+        // Prepare order details
+        let orderDetails = '';
+        cart.forEach(item => {
+          orderDetails += `${item.name} x${item.quantity} ($${item.price.toFixed(2)} each), `;
+        });
+        orderDetails = orderDetails.slice(0, -2); // Remove trailing comma and space
+        
+        // Fill the notification form
+        document.getElementById('orderID').value = orderID;
+        document.getElementById('notifyName').value = customerName;
+        document.getElementById('notifyEmail').value = customerEmail;
+        document.getElementById('notifyAddress').value = shippingAddress;
+        document.getElementById('orderDetails').value = orderDetails;
+        document.getElementById('orderTotal').value = '$' + orderTotal.toFixed(2);
+        document.getElementById('notifyPayment').value = paymentMethod;
+        
+        // Submit the notification form
+        document.getElementById('orderNotificationForm').submit();
+  
+        // Display the success message
+        const successMessage = document.createElement('div');
+        successMessage.style.position = 'fixed';
+        successMessage.style.top = '50%';
+        successMessage.style.left = '50%';
+        successMessage.style.transform = 'translate(-50%, -50%)';
+        successMessage.style.backgroundColor = '#8b7355';
+        successMessage.style.color = 'white';
+        successMessage.style.padding = '20px';
+        successMessage.style.borderRadius = '6px';
+        successMessage.style.fontSize = '1.2rem';
+        successMessage.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+        successMessage.textContent = 'Order placed successfully! Redirecting...';
+        document.body.appendChild(successMessage);
+  
+        // Wait 2 seconds before redirecting
+        setTimeout(function () {
+          // Clear the cart
+          localStorage.removeItem('visionCraftCart');
+          // Redirect to the homepage or any other page
+          window.location.href = '../index.html'; // Redirect to homepage
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>

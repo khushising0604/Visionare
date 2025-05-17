@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Visionare</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/header.css"/>
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fffdf9;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #8b7355;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-section label {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .form-section input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fdfaf5;
+    }
+
+    .login-btn, .register-link {
+      background-color: #8b7355;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover, .register-link:hover {
+      background-color: #a48d6b;
+    }
+
+    .register-link {
+      background: none;
+      border: none;
+      color: #8b7355;
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+
+    .register-link:hover {
+      color: #a48d6b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">Visionare</div>
+      <div class="user-actions">
+        <a href="#">Store Locator</a>
+        <a href="login.html">Sign In / Register</a>
+        <a href="cart.html" class="cart-icon">Cart</a>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="eyeglasses.html">Eyeglasses</a></li>
+        <li><a href="sunglasses.html">Sunglasses</a></li>
+        <li><a href="computer-glasses.html">Computer Glasses</a></li>
+        <li><a href="contact-lenses.html">Contact Lenses</a></li>
+        <li><a href="../index.html#try-on-section">3D Try On</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="form-section">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-section">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <p>Don't have an account? <button class="register-link" onclick="window.location.href='register.html'">Register here</button></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Visionare. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Add backend login functionality here (e.g., send data to your server for authentication)
+      console.log('Logging in with:', email, password);
+
+      // For now, redirect to home page after login (you can replace this with actual authentication)
+      window.location.href = "../index.html";
+    });
+  </script>
+</body>
+</html>
